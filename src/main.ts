@@ -8,14 +8,14 @@ import decompress = require("decompress");
 const serverDownload = {
   darwin: {
     url:
-      "https://github.com/crystal-lang-tools/scry/releases/download/v0.7.1/scry_macOS.tar.gz"
+      "https://github.com/elbywan/crystalline/releases/latest/download/crystalline_darwin.gz"
   },
   linux: {
     url:
-      "https://github.com/crystal-lang-tools/scry/releases/download/v0.7.1/scry_linux.tar.gz"
+      "https://github.com/elbywan/crystalline/releases/latest/download/crystalline_linux.gz"
   }
 };
-const serverBinary = "scry";
+const serverBinary = "crystalline";
 
 class CrystalLanguageServer extends AutoLanguageClient {
   private statusElement: HTMLSpanElement;
@@ -35,7 +35,7 @@ class CrystalLanguageServer extends AutoLanguageClient {
   }
 
   protected getServerName() {
-    return "scry";
+    return "crystalline";
   }
 
   protected consumeStatusBar(statusBar: StatusBar) {
@@ -78,7 +78,7 @@ class CrystalLanguageServer extends AutoLanguageClient {
 
   private async installServer(serverHome: string) {
     const localFileName = path.join(serverHome, "download.tar.gz");
-    const url = this.getScryDownload();
+    const url = this.getCrystallineDownload();
 
     this.logger.log(`Downloading ${url} to ${localFileName}`);
 
@@ -156,7 +156,7 @@ class CrystalLanguageServer extends AutoLanguageClient {
     }
   }
 
-  private getScryDownload(): string {
+  private getCrystallineDownload(): string {
     switch (process.platform) {
       case "darwin":
       case "linux":
