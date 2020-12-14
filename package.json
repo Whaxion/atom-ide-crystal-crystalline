@@ -1,8 +1,8 @@
 {
-  "name": "ide-crystal",
+  "name": "ide-crystal-crystalline",
   "repository": {
     "type": "git",
-    "url": "https://github.com/crystal-lang-tools/atom-ide-crystal.git"
+    "url": "https://github.com/Whaxion/atom-ide-crystal-crystalline"
   },
   "main": "./src/main.ts",
   "scripts": {
